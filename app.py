@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
+from markupsafe import Markup
 from datetime import datetime
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
+import markdown2 
 
 app = Flask(__name__)
 
@@ -13,6 +15,10 @@ client = OpenAI(
     api_key=os.getenv("DEEPSEEK_API_KEY"),
     base_url="https://api.deepseek.com"
 )
+
+def render_markdown(markdown_text):
+    html = markdown2.markdown(markdown_text)
+    return Markup(html)
 
 def get_astrological_response(prompt):
     """Helper function to get response from DeepSeek API"""
@@ -114,28 +120,28 @@ def index():
         title = ""
         
         if prediction_type == "weekly":
-            result = predict_weekly_future(birthdate)
+            result = render_markdown(predict_weekly_future(birthdate))
             title = "တစ်ပတ်အတွက် ကံကြမ္မာခန့်မှန်းချက်"
         elif prediction_type == "monthly":
-            result = predict_monthly_future(birthdate)
+            result = render_markdown(predict_monthly_future(birthdate))
             title = "တစ်လအတွက် ကံကြမ္မာခန့်မှန်းချက်"
         elif prediction_type == "yearly":
-            result = predict_yearly_future(birthdate)
+            result = render_markdown(predict_yearly_future(birthdate))
             title = "တစ်နှစ်အတွက် ကံကြမ္မာခန့်မှန်းချက်"
         elif prediction_type == "personality":
-            result = describe_personality(birthdate)
+            result = render_markdown(describe_personality(birthdate))
             title = "ကိုယ်ရေးကိုယ်တာ စရိုက်လက္ခဏာများ"
         elif prediction_type == "dos_donts":
-            result = dos_and_donts(birthdate)
+            result = render_markdown(dos_and_donts(birthdate))
             title = "ပြုလုပ်သင့်သည်များနှင့် ရှောင်ကြဉ်သင့်သည်များ"
         elif prediction_type == "all":
-            weekly = predict_weekly_future(birthdate)
-            monthly = predict_monthly_future(birthdate)
-            yearly = predict_yearly_future(birthdate)
-            personality = describe_personality(birthdate)
-            dosdonts = dos_and_donts(birthdate)
+            weekly = render_markdown(predict_weekly_future(birthdate))
+            monthly = render_markdown(predict_monthly_future(birthdate))
+            yearly = render_markdown(predict_yearly_future(birthdate))
+            personality = render_markdown(describe_personality(birthdate))
+            dosdonts = render_markdown(dos_and_donts(birthdate))
             
-            result = f"""
+            result = Markup(f"""
             <h3>တစ်ပတ်အတွက် ကံကြမ္မာခန့်မှန်းချက်:</h3>
             {weekly}
             <hr>
@@ -150,7 +156,7 @@ def index():
             <hr>
             <h3>ပြုလုပ်သင့်သည်များနှင့် ရှောင်ကြဉ်သင့်သည်များ:</h3>
             {dosdonts}
-            """
+            """)
             title = "အားလုံးခန့်မှန်းချက်များ"
         
         return render_template('result.html', title=title, result=result, birthdate=birthdate)
