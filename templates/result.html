@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="result-container">
+    <div class="result-header">
+        <h2>{{ title }}</h2>
+        <p class="birthdate-info">မွေးသက္ကရာဇ်: {{ birthdate }}</p>
+    </div>
+    
+    <div class="result-content">
+        {{ result|safe }}
+    </div>
+    
+    <div class="back-link">
+        <a href="{{ url_for('index') }}">နောက်သို့ပြန်သွားရန်</a>
+    </div>
+</div>
+{% endblock %}
