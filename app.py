@@ -111,9 +111,9 @@ def index():
         prediction_type = request.form['prediction_type']
 # Validate date format 
         try: 
-            datetime.strptime(birthdate, "%d-%m-%Y") 
+            datetime.strptime(birthdate, "%Y-%m-%d") 
         except ValueError: 
-            return render_template('index.html', error="မှားယွင်းသော ရက်စွဲ format ဖြစ်နေပါသည်။ DD-MM-YYYY format ဖြင့် ပြန်လည်ရိုက်ထည့်ပါ။") 
+            return render_template('index.html', error="မှားယွင်းသော ရက်စွဲ format ဖြစ်နေပါသည်။") 
          
         result = "" 
         title = "" 
