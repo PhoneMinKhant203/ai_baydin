@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="form-container">
-    <h2>Astrological Future Predictor အပလီကေးရှင်းမှ ကြိုဆိုပါသည်။</h2>
+    <h2>AI Bay Din အပလီကေးရှင်းမှ ကြိုဆိုပါသည်။</h2>
     
     {% if error %}
         <div class="error">{{ error }}</div>
@@ -10,7 +10,7 @@
     
     <form method="POST" action="/">
         <div class="form-group">
-            <label for="birthdate">သင့်ရဲ့မွေးသက္ကရာဇ်ကို ထည့်ပါ</label>
+            <label for="birthdate">သင့်ရဲ့မွေးသက္ကရာဇ်ကို ထည့်ပါ:</label>
             <input type="date" id="birthdate" name="birthdate" placeholder="DD-MM-YYYY" required>
         </div>
         
