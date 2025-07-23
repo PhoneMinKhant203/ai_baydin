@@ -1,0 +1,115 @@
+# 🌟 Burmese Astrology AI App
+
+A Flask-based web application that predicts astrological insights in Burmese based on a user's birthdate. Powered by DeepSeek's language model, it generates weekly, monthly, and yearly forecasts, personality traits, and lucky/unlucky attributes.
+
+## ✨ Features
+
+* **Weekly, Monthly, and Yearly Predictions** in Burmese language.
+* **Personality Analysis** based on birthdate.
+* **Things To Do / Avoid** including:
+  - Lucky and unlucky colors
+  - Lucky and unlucky numbers
+  - Lucky and unlucky places
+* **User-Friendly UI:** Built using Flask + Jinja templates.
+* **Markdown to HTML Rendering** for rich display.
+* **Powered by DeepSeek API** for accurate AI predictions.
+
+## 🧠 Technologies Used
+
+* **Flask** — Python web framework
+* **OpenAI / DeepSeek API** — AI-based content generation
+* **Markdown2** — Convert Markdown to HTML
+* **dotenv** — For secure API key management
+* **Jinja2** — HTML templating
+
+## 📁 Project Structure
+
+```
+astrology-app/
+├── app.py
+├── templates/
+│   ├── index.html
+│   └── result.html
+├── static/
+│   └── (optional styles or assets)
+├── .env
+├── requirements.txt
+```
+
+## 🔑 Environment Setup
+
+1. **Create `.env` file** in your project root:
+
+```
+DEEPSEEK_API_KEY=sk-your-deepseek-api-key
+```
+
+> Never expose your API key publicly.
+
+## 📦 Installation & Running
+
+1. Clone the repository:
+
+```bash
+git clone <your_repo_url>
+cd astrology-app
+```
+
+2. Create virtual environment (optional but recommended):
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Start the Flask server:
+
+```bash
+python app.py
+```
+
+5. Open your browser and go to:
+
+```
+http://localhost:6137
+```
+
+## 💡 Usage
+
+1. Enter your **birthdate** in YYYY-MM-DD format.
+2. Choose one of the prediction types:
+   - Weekly
+   - Monthly
+   - Yearly
+   - Personality
+   - Dos and Don'ts
+   - All (for full report)
+3. Submit the form and view the prediction in beautifully rendered Burmese text.
+
+## 🧪 Sample Prompts Used
+
+* Weekly Forecast:
+  > "Based on the birthdate 1995-03-15, predict the future for the current week in Burmese language..."
+
+* Monthly Forecast:
+  > "Based on the birthdate 1995-03-15, predict the future for the current month in Burmese language..."
+
+* Personality:
+  > "Based on the birthdate 1995-03-15, describe the personality traits..."
+
+* Dos and Don’ts:
+  > "Provide 5 lucky things, unlucky things, lucky colors, numbers, etc..."
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+## 📬 Contact
+
+For suggestions or issues, please contact the project maintainer or open a GitHub issue.
