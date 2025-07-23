@@ -85,17 +85,3 @@ python app.py
    - Personality
    - Dos and Don'ts
 3. Submit the form and view the prediction in beautifully rendered Burmese text.
-
-## 🧪 Sample Prompts Used
-
-* Weekly Forecast:
-  > "Based on the birthdate 1995-03-15, predict the future for the current week in Burmese language..."
-
-* Monthly Forecast:
-  > "Based on the birthdate 1995-03-15, predict the future for the current month in Burmese language..."
-
-* Personality:
-  > "Based on the birthdate 1995-03-15, describe the personality traits..."
-
-* Dos and Don’ts:
-  > "Provide 5 lucky things, unlucky things, lucky colors, numbers, etc..."
