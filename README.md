@@ -84,7 +84,6 @@ python app.py
    - Yearly
    - Personality
    - Dos and Don'ts
-   - All (for full report)
 3. Submit the form and view the prediction in beautifully rendered Burmese text.
 
 ## 🧪 Sample Prompts Used
