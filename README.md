@@ -25,13 +25,15 @@ A Flask-based web application that predicts astrological insights in Burmese bas
 ## 📁 Project Structure
 
 ```
-astrology-app/
+ai_baydin/
 ├── app.py
 ├── templates/
 │   ├── index.html
 │   └── result.html
+│   └── base.html
 ├── static/
-│   └── (optional styles or assets)
+│   └── css/
+│     └── style.css
 ├── .env
 ├── requirements.txt
 ```
@@ -51,8 +53,7 @@ DEEPSEEK_API_KEY=sk-your-deepseek-api-key
 1. Clone the repository:
 
 ```bash
-git clone <your_repo_url>
-cd astrology-app
+git clone https://github.com/PhoneMinKhant203/ai_baydin.git
 ```
 
 2. Create virtual environment (optional but recommended):
@@ -72,12 +73,6 @@ pip install -r requirements.txt
 
 ```bash
 python app.py
-```
-
-5. Open your browser and go to:
-
-```
-http://localhost:6137
 ```
 
 ## 💡 Usage
@@ -105,11 +100,3 @@ http://localhost:6137
 
 * Dos and Don’ts:
   > "Provide 5 lucky things, unlucky things, lucky colors, numbers, etc..."
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
-## 📬 Contact
-
-For suggestions or issues, please contact the project maintainer or open a GitHub issue.
